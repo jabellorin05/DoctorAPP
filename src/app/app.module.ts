@@ -10,21 +10,23 @@ import { ObservationComponent } from './components/observation/observation.compo
 import { PrescriptionComponent } from './components/prescription/prescription.component';
 import { LaboratoryTestComponent } from './components/laboratory-test/laboratory-test.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
     PatientSearchComponent,
     ObservationComponent,
     PrescriptionComponent,
-    LaboratoryTestComponent
+    LaboratoryTestComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatTabsModule
+    MatTabsModule,
+    HttpClientModule,
   ],
   providers: [
     provideAnimationsAsync()

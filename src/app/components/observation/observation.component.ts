@@ -1,7 +1,6 @@
 import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { Observation } from '../../models/observation.model';
 import { PatientService } from '../../services/patient.service';
-import { Patient } from '../../models/patient.model';
 
 @Component({
   selector: 'app-observation',
@@ -10,6 +9,7 @@ import { Patient } from '../../models/patient.model';
 })
 export class ObservationComponent implements OnInit, OnChanges {
   @Input() patientId: number = 0;
+  @Input() newObservationNotes: [] = [];
   observations: Observation[] = [];
   newObservation: Observation = { id: 0, patientId: 0, notes: '', date: new Date() };
  
@@ -37,10 +37,18 @@ export class ObservationComponent implements OnInit, OnChanges {
 
   addObservation() {
     this.newObservation.patientId = this.patientId;
-    console.log("agregando observacion"+this.observations.length);
+    
     this.patientService.addObservation(this.patientId, this.newObservation);
   //  this.observations.push(this.newObservation); // Agrega la nueva observación
-    console.log("agregando observacion"+this.observations.length);
+    
     this.newObservation = { id: 0, patientId: 0, notes: '', date: new Date() }; // Resetea el formulario
   }
+
+  saveAll() {
+    
+   const url : string  = "https://localhost:7288/api/Prescription";
+
+
+  } 
+ 
 }
