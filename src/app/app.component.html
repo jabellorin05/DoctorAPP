@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>Doctor Dashboard</h1>
+
+  <mat-tab-group>
+    <mat-tab label="Search Patient">
+      <app-patient-search (patientSelected)="onPatientSelected($event)"></app-patient-search>
+    </mat-tab>
+    <mat-tab label="Observations">
+      <app-observation *ngIf="selectedPatientId" [patientId]="selectedPatientId"></app-observation>
+    </mat-tab>
+    <mat-tab label="Prescriptions">
+      <app-prescription *ngIf="selectedPatientId" [patientId]="selectedPatientId"></app-prescription>
+    </mat-tab>
+    <mat-tab label="Laboratory Tests">
+      <app-laboratory-test *ngIf="selectedPatientId" [patientId]="selectedPatientId"></app-laboratory-test>
+    </mat-tab>
+  </mat-tab-group>
+
+  <button class="btn btn-success" (click)="saveAll()">Save All and Close</button>
+</div>

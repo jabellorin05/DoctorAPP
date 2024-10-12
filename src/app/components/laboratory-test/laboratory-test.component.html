@@ -1,0 +1,15 @@
+<div>
+    <h4>Add Laboratory Test</h4>
+    <input [(ngModel)]="newLaboratoryTest.testName" placeholder="Test Name" class="form-control mb-2" />
+    <input [(ngModel)]="newLaboratoryTest.results" placeholder="Results" class="form-control mb-2" />
+    <button class="btn btn-primary mt-2" (click)="addLaboratoryTest()">Add Laboratory Test</button>
+
+    <div *ngIf="laboratoryTests.length > 0" class="mt-4">
+        <h5>Existing Laboratory Tests</h5>
+        <ul class="list-group">
+            <li *ngFor="let test of laboratoryTests" class="list-group-item">
+                {{ test.testName }} - {{ test.results }} ({{ test.date | date:'short' }})
+            </li>
+        </ul>
+    </div>
+</div>

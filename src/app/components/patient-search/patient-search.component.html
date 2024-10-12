@@ -1,0 +1,26 @@
+<div class="container">
+    <h2>Search Patient</h2>
+
+    <div class="form-group">
+        <label for="searchBy">Search by:</label>
+        <select id="searchBy" class="form-control mb-2" [(ngModel)]="searchCriteria">
+            <option value="name">Name</option>
+            <option value="id">ID</option>
+        </select>
+    </div>
+
+    <div class="input-group mb-3">
+        <input type="text" placeholder="Enter {{ searchCriteria === 'name' ? 'name' : 'ID' }}" [(ngModel)]="searchTerm"
+            (input)="filterPatients()" class="form-control" />
+    </div>
+
+    <!-- Lista de resultados que se oculta al seleccionar un paciente -->
+    <div *ngIf="filteredPatients.length > 0">
+        <ul class="list-group">
+            <li *ngFor="let patient of filteredPatients" (click)="onSelectPatient(patient.id)"
+                class="list-group-item list-group-item-action">
+                {{ patient.name }} {{ patient.lastName }} - {{ patient.id }}
+            </li>
+        </ul>
+    </div>
+</div>

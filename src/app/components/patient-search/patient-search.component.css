@@ -1,0 +1,49 @@
+.container {
+    max-width: 600px;
+    /* Define un ancho máximo */
+    margin: 0 auto;
+    /* Centra el contenedor */
+    padding: 20px;
+    /* Agrega espacio interno */
+}
+
+h2 {
+    text-align: center;
+    /* Centra el título */
+}
+
+.input-group {
+    display: flex;
+    /* Asegura que los elementos se alineen horizontalmente */
+}
+
+.btn {
+    margin-left: 5px;
+    /* Espacio entre el campo de entrada y el botón */
+}
+
+.results-container {
+    margin-top: 10px;
+    /* Espacio entre el campo de búsqueda y los resultados */
+}
+
+.list-group {
+    position: relative;
+    /* Permite que se superponga adecuadamente */
+    z-index: 1000;
+    /* Asegura que la lista esté visible sobre otros elementos */
+    background-color: white;
+    /* Asegura que el fondo de la lista sea blanco */
+    border: 1px solid #ddd;
+    /* Opcional: agrega borde a la lista */
+}
+
+.list-group-item {
+    cursor: pointer;
+    /* Cambia el cursor para indicar que se puede hacer clic */
+}
+
+.list-group-item:hover {
+    background-color: #f1f1f1;
+    /* Cambia el color de fondo al pasar el mouse */
+}

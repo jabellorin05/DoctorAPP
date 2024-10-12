@@ -1,0 +1,14 @@
+<div>
+    <h4>Add Observation</h4>
+    <textarea [(ngModel)]="newObservation.notes" placeholder="Enter notes" class="form-control"></textarea>
+    <button class="btn btn-primary mt-2" (click)="addObservation()">Add Observation</button>
+
+    <div *ngIf="observations.length > 0" class="mt-4">
+        <h5>Existing Observations</h5>
+        <ul class="list-group">
+            <li *ngFor="let observation of observations" class="list-group-item">
+                {{ observation.notes }} - {{ observation.date | date:'short' }}
+            </li>
+        </ul>
+    </div>
+</div>
