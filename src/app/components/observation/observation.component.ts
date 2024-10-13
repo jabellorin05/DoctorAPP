@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { Observation } from '../../models/observation.model';
 import { PatientService } from '../../services/patient.service';
+import { PostObservationService } from '../../services/PostObservationService';
 
 @Component({
   selector: 'app-observation',
@@ -14,7 +15,9 @@ export class ObservationComponent implements OnInit, OnChanges {
   newObservation: Observation = { id: 0, patientId: 0, notes: '', date: new Date() };
  
 
-  constructor(private patientService: PatientService) { }
+  constructor(private patientService: PatientService , private postObservationService: PostObservationService) { }
+
+
 
   ngOnInit() {
     this.loadPatientObservations();
@@ -37,8 +40,16 @@ export class ObservationComponent implements OnInit, OnChanges {
 
   addObservation() {
     this.newObservation.patientId = this.patientId;
-    
-    this.patientService.addObservation(this.patientId, this.newObservation);
+    this.postObservationService.addObservation(this.newObservation).subscribe(
+      (response) => {
+        console.log('Observación guardada:', response);
+      },
+      (error) => {
+        console.error('Error al guardar observación:', error);
+      }
+    );
+
+   
   //  this.observations.push(this.newObservation); // Agrega la nueva observación
     
     this.newObservation = { id: 0, patientId: 0, notes: '', date: new Date() }; // Resetea el formulario
@@ -46,7 +57,7 @@ export class ObservationComponent implements OnInit, OnChanges {
 
   saveAll() {
     
-   const url : string  = "https://localhost:7288/api/Prescription";
+    this.addObservation()
 
 
   } 
