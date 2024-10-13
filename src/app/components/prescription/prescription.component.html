@@ -1,6 +1,6 @@
 <div>
     <h4>Add Prescription</h4>
-    <input [(ngModel)]="newPrescription.medication" placeholder="Medication" class="form-control mb-2" />
+    <input [(ngModel)]="newPrescription.Medication" placeholder="Medication" class="form-control mb-2" />
     <input [(ngModel)]="newPrescription.dosage" placeholder="Dosage" class="form-control mb-2" />
     <button class="btn btn-primary mt-2" (click)="addPrescription()">Add Prescription</button>
 
@@ -8,7 +8,7 @@
         <h5>Existing Prescriptions</h5>
         <ul class="list-group">
             <li *ngFor="let prescription of prescriptions" class="list-group-item">
-                {{ prescription.medication }} - {{ prescription.dosage }} ({{ prescription.date | date:'short' }})
+                {{ prescription.Medication }} - {{ prescription.dosage }} ({{ prescription.Date | date:'short' }})
             </li>
         </ul>
     </div>

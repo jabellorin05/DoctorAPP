@@ -30,12 +30,7 @@ export class ObservationComponent implements OnInit, OnChanges {
   }
 
   loadPatientObservations() {
-    const patient = this.patientService.findPatientById(this.patientId);
-
-    if (patient) {
-      this.observations = patient.observations || []; // Inicializa observaciones
-    
-    }
+    this.getObservationNotes(this.patientId);
   }
 
   addObservation() {
@@ -53,6 +48,18 @@ export class ObservationComponent implements OnInit, OnChanges {
   //  this.observations.push(this.newObservation); // Agrega la nueva observación
     
     this.newObservation = { id: 0, patientId: 0, notes: '', date: new Date() }; // Resetea el formulario
+  }
+
+  async getObservationNotes(id: number) { 
+
+  const url = `https://localhost:7288/api/Observation/PatientID/${id}`;
+
+   const response =  await fetch(url)
+    const data = await response.json()
+    this.observations = data
+
+
+
   }
 
   saveAll() {

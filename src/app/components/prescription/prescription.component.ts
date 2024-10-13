@@ -10,7 +10,7 @@ import { PatientService } from '../../services/patient.service';
 export class PrescriptionComponent implements OnInit {
   @Input() patientId: number = 0;
   prescriptions: Prescription[] = [];
-  newPrescription: Prescription = { id: 0, patientId: 0, medication: '', dosage: '', date: new Date() };
+  newPrescription: Prescription = { PrescriptionId: 0, PatientId: 0, Medication: '', dosage: '', Date: new Date() };
 
   constructor(private patientService: PatientService) { }
 
@@ -27,10 +27,10 @@ export class PrescriptionComponent implements OnInit {
   }
 
   addPrescription() {
-    this.newPrescription.patientId = this.patientId;
+    this.newPrescription.PatientId = this.patientId;
     this.patientService.addPrescription(this.patientId, this.newPrescription);
     this.prescriptions.push(this.newPrescription); // Agrega la nueva prescripción
-    this.newPrescription = { id: 0, patientId: 0, medication: '', dosage: '', date: new Date() }; // Resetea el formulario
+    this.newPrescription = { PrescriptionId: 0, PatientId: 0, Medication: '', dosage: '', Date: new Date() }; // Resetea el formulario
   }
 
 

@@ -12,6 +12,6 @@ export class PrescriptionService {
     }
 
     getPrescriptionsForPatient(patientId: number) {
-        return this.prescriptions.filter(prescription => prescription.patientId === patientId);
+        return this.prescriptions.filter(prescription => prescription.PatientId === patientId);
     }
 }
