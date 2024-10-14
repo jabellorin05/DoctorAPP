@@ -30,14 +30,17 @@ export class ObservationComponent implements OnInit, OnChanges {
   }
 
   loadPatientObservations() {
-    this.getObservationNotes(this.patientId);
+   this.getObservationNotes(this.patientId);
+  
   }
 
   addObservation() {
     this.newObservation.patientId = this.patientId;
+
     this.postObservationService.addObservation(this.newObservation).subscribe(
       (response) => {
         console.log('Observación guardada:', response);
+        this.loadPatientObservations(); // Vuelve a cargar las observaciones
       },
       (error) => {
         console.error('Error al guardar observación:', error);

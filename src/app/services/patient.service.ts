@@ -24,7 +24,7 @@ export class PatientService {
                 gender: 'male',
                 medicalHistory: [],
                 prescriptions: [
-                    { PrescriptionId: 1, PatientId: 123456, Medication: 'Aspirin', dosage: '500 mg', Date: new Date('2023-01-01') }
+                    { PrescriptionId: 1, PatientId: 123456, medication: 'Aspirin', dosage: '500 mg', date: new Date('2023-01-01') }
                 ],
                 observations: [
                     { id: 1, patientId: 123456, notes: 'Routine check-up, no issues.', date: new Date('2023-02-15') }
@@ -44,7 +44,7 @@ export class PatientService {
                 gender: 'female',
                 medicalHistory: [],
                 prescriptions: [
-                    { PrescriptionId: 2, PatientId: 2, Medication: 'Ibuprofen', dosage: '200 mg', Date: new Date('2023-01-05') }
+                    { PrescriptionId: 2, PatientId: 2, medication: 'Ibuprofen', dosage: '200 mg', date: new Date('2023-01-05') }
                 ],
                 observations: [
                     { id: 2, patientId: 2, notes: 'Patient has allergies to penicillin.', date: new Date('2023-02-20') }
@@ -64,7 +64,7 @@ export class PatientService {
                 gender: 'male',
                 medicalHistory: [],
                 prescriptions: [
-                    { PrescriptionId: 3, PatientId: 3, Medication: 'Lisinopril', dosage: '10 mg', Date: new Date('2023-01-10') }
+                    { PrescriptionId: 3, PatientId: 3, medication: 'Lisinopril', dosage: '10 mg', date: new Date('2023-01-10') }
                 ],
                 observations: [
                     { id: 3, patientId: 3, notes: 'Blood pressure slightly elevated.', date: new Date('2023-03-01') }
@@ -84,7 +84,7 @@ export class PatientService {
                 gender: 'male',
                 medicalHistory: [],
                 prescriptions: [
-                    { PrescriptionId: 4, PatientId: 4, Medication: 'Metformin', dosage: '500 mg', Date: new Date('2023-01-15') }
+                    { PrescriptionId: 4, PatientId: 4, medication: 'Metformin', dosage: '500 mg', date: new Date('2023-01-15') }
                 ],
                 observations: [
                     { id: 4, patientId: 4, notes: 'Diabetes management ongoing.', date: new Date('2023-02-10') }
@@ -104,7 +104,7 @@ export class PatientService {
                 gender: 'female',
                 medicalHistory: [],
                 prescriptions: [
-                    { PrescriptionId: 5, PatientId: 5, Medication: 'Antihistamine', dosage: '10 mg', Date: new Date('2023-01-20') }
+                    { PrescriptionId: 5, PatientId: 5, medication: 'Antihistamine', dosage: '10 mg', date: new Date('2023-01-20') }
                 ],
                 observations: [
                     { id: 5, patientId: 5, notes: 'Allergy symptoms observed.', date: new Date('2023-02-25') }
@@ -124,7 +124,7 @@ export class PatientService {
                 gender: 'male',
                 medicalHistory: [],
                 prescriptions: [
-                    { PrescriptionId: 6, PatientId: 6, Medication: 'Pain Reliever', dosage: '500 mg', Date: new Date('2023-01-25') }
+                    { PrescriptionId: 6, PatientId: 6, medication: 'Pain Reliever', dosage: '500 mg', date: new Date('2023-01-25') }
                 ],
                 observations: [
                     { id: 6, patientId: 6, notes: 'Post-surgery recovery monitored.', date: new Date('2023-03-10') }
@@ -144,7 +144,7 @@ export class PatientService {
                 gender: 'female',
                 medicalHistory: [],
                 prescriptions: [
-                    { PrescriptionId: 7, PatientId: 7, Medication: 'Vitamin D', dosage: '1000 IU', Date: new Date('2023-01-30') }
+                    { PrescriptionId: 7, PatientId: 7, medication: 'Vitamin D', dosage: '1000 IU', date: new Date('2023-01-30') }
                 ],
                 observations: [
                     { id: 7, patientId: 7, notes: 'Healthy, regular exercise.', date: new Date('2023-02-05') }
@@ -164,7 +164,7 @@ export class PatientService {
                 gender: 'male',
                 medicalHistory: [],
                 prescriptions: [
-                    { PrescriptionId: 8, PatientId: 8, Medication: 'Multivitamin', dosage: '1 tablet', Date: new Date('2023-01-01') }
+                    { PrescriptionId: 8, PatientId: 8, medication: 'Multivitamin', dosage: '1 tablet', date: new Date('2023-01-01') }
                 ],
                 observations: [
                     { id: 8, patientId: 8, notes: 'Regular check-up, no major concerns.', date: new Date('2023-02-01') }
@@ -184,7 +184,7 @@ export class PatientService {
                 gender: 'female',
                 medicalHistory: [],
                 prescriptions: [
-                    { PrescriptionId: 9, PatientId: 9, Medication: 'Mood Stabilizer', dosage: '50 mg', Date: new Date('2023-01-15') }
+                    { PrescriptionId: 9, PatientId: 9, medication: 'Mood Stabilizer', dosage: '50 mg', date: new Date('2023-01-15') }
                 ],
                 observations: [
                     { id: 9, patientId: 9, notes: 'Counseling sessions ongoing.', date: new Date('2023-02-20') }
@@ -204,7 +204,7 @@ export class PatientService {
                 gender: 'male',
                 medicalHistory: [],
                 prescriptions: [
-                    { PrescriptionId: 10, PatientId: 10, Medication: 'Anti-inflammatory', dosage: '250 mg', Date: new Date('2023-01-20') }
+                    { PrescriptionId: 10, PatientId: 10, medication: 'Anti-inflammatory', dosage: '250 mg', date: new Date('2023-01-20') }
                 ],
                 observations: [
                     { id: 10, patientId: 10, notes: 'Injury recovery monitored.', date: new Date('2023-02-25') }
