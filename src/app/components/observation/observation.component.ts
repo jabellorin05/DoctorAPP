@@ -2,6 +2,8 @@ import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/cor
 import { Observation } from '../../models/observation.model';
 import { PatientService } from '../../services/patient.service';
 import { PostObservationService } from '../../services/PostObservationService';
+import { ActivatedRoute } from '@angular/router';  // Importar ActivatedRoute para capturar el parámetro de la URL
+import { Patient } from '../../models/patient.model';
 
 @Component({
   selector: 'app-observation',
@@ -13,25 +15,32 @@ export class ObservationComponent implements OnInit, OnChanges {
   @Input() newObservationNotes: [] = [];
   observations: Observation[] = [];
   newObservation: Observation = { id: 0, patientId: 0, notes: '', date: new Date() };
- 
+  selectedPatient: Patient | null = null;
 
-  constructor(private patientService: PatientService , private postObservationService: PostObservationService) { }
+  constructor( private route: ActivatedRoute,private patientService: PatientService , private postObservationService: PostObservationService) { }
 
 
 
   ngOnInit() {
+    const routePatientId = this.route.snapshot.paramMap.get('id');
+    if (routePatientId) {
+      this.patientId = +routePatientId;  // Convertir el parámetro de ruta a número
+    }
     this.loadPatientObservations();
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    if (changes['patientId']) {
-      this.loadPatientObservations(); // Vuelve a cargar las observaciones si patientId cambia
+    if (changes['patientId'] && changes['patientId'].currentValue) {
+      this.loadPatientObservations();  // Recargar las observaciones si el patientId cambia
     }
   }
 
   loadPatientObservations() {
+    const patient = this.patientService.findPatientById(this.patientId);
+    if (patient) {
+    this.selectedPatient = patient;
    this.getObservationNotes(this.patientId);
-  
+    }
   }
 
   addObservation() {
