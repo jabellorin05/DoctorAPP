@@ -2,6 +2,8 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { PatientService } from '../../services/patient.service';
 import { Patient } from '../../models/patient.model';
 import { Router } from '@angular/router';  // Importa Router
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 
 @Component({
   selector: 'app-patient-search',
@@ -69,5 +71,22 @@ onSelectPatient(patientId: number) {
   this.searchTerm = '';
   this.filteredPatients = [];
 }
+
+// Generate PDF for the selected patient
+generatePDF() {
+  const data = document.getElementById('report-content');
+  if (data) {
+    html2canvas(data).then(canvas => {
+      const imgWidth = 208; // A4 size page width in mm
+      const pageHeight = 295; // A4 size page height in mm
+      const imgHeight = canvas.height * imgWidth / canvas.width;
+      const doc = new jsPDF('p', 'mm', 'a4');
+      const imgData = canvas.toDataURL('image/png');
+      doc.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
+      doc.save('patient-report.pdf');
+    });
+  }
+}
+
 
 }

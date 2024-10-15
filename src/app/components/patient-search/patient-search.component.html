@@ -2,7 +2,7 @@
     <!-- Columna izquierda (Buscador) -->
     <div class="search-panel" style="width: 30%;">
         <h2>Search Patient</h2>
-
+ 
         <div class="form-group">
             <label for="searchBy">Search by:</label>
             <!-- Detecta cuando se cambia el criterio de búsqueda -->
@@ -11,30 +11,22 @@
                 <option value="id">ID</option>
             </select>
         </div>
-
-        <!-- 
-        <div class="input-group mb-3">
-            <input type="text" placeholder="Enter {{ searchCriteria === 'name' ? 'name' : 'ID' }}" [(ngModel)]="searchTerm"
-                (input)="filterPatients()" class="form-control" />
-                <button class="btn btn-primary" (click)="onSearch()">Search</button> 
-            </div>
-        
-        -->
-
+ 
+ 
         <div class="input-group mb-3">
             <input type="text" placeholder="Enter {{ searchCriteria === 'name' ? 'name' : 'ID' }}" [(ngModel)]="searchTerm" class="form-control" />
         </div>
-        
-        <div class="mb-3">                                                              <!--button search--> 
+       
+        <div class="mb-3">                                                              <!--button search-->
             <button class="btn btn-primary w-100" (click)="onSearch()">Search</button>
         </div>
-
+ 
         <!-- Mostrar mensaje si no se encontró ningún paciente -->
         <div *ngIf="noPatientFound" class="alert alert-warning">
             No patient found with the provided {{ searchCriteria }}.
         </div>
-
-
+ 
+ 
         <!-- Lista de resultados que se oculta al seleccionar un paciente -->
         <div *ngIf="filteredPatients.length > 0">
             <ul class="list-group">
@@ -45,22 +37,50 @@
             </ul>
         </div>
     </div>
-
+ 
     <!-- Columna derecha (Información del paciente seleccionado) -->
     <div class="patient-info-panel" style="width: 65%;" *ngIf="selectedPatient">
-        <div class="mt-0">
+        <!-- Wrap patient info in a div with an ID for PDF generation -->
+        <div id="report-content">
             <h2>Patient Information</h2>
             <p><strong>Name:</strong> {{ selectedPatient.name }} {{ selectedPatient.lastName }}</p>
             <p><strong>ID:</strong> {{ selectedPatient.id }}</p>
             <p><strong>Date of Birth:</strong> {{ selectedPatient.dateOfBirth | date }}</p>
             <p><strong>Email:</strong> {{ selectedPatient.email }}</p>
             <p><strong>Address:</strong> {{ selectedPatient.address }}</p>
-            <p><strong>Medical History:</strong></p>
+ 
+            <h3>Medical History:</h3>
             <ul>
                 <li *ngFor="let history of selectedPatient.medicalHistory">
                     {{ history }}
                 </li>
             </ul>
+ 
+            <h3>Observations:</h3>
+            <ul>
+                <li *ngFor="let observation of selectedPatient.observations">
+                    {{ observation.notes }} - {{ observation.date | date: 'short' }}
+                </li>
+            </ul>
+ 
+            <h3>Prescriptions:</h3>
+            <ul>
+                <li *ngFor="let prescription of selectedPatient.prescriptions">
+                    {{ prescription.medication }} - {{ prescription.dosage }} ({{ prescription.date | date: 'short' }})
+                </li>
+            </ul>
+ 
+            <h3>Laboratory Tests:</h3>
+            <ul>
+                <li *ngFor="let test of selectedPatient.laboratoryTests">
+                    {{ test.testName }} - {{ test.results }} ({{ test.date | date: 'short' }})
+                </li>
+            </ul>
+ 
+            <!-- Botón para generar el PDF (ahora al final) -->
+            <div class="mt-4">
+                <button class="btn btn-secondary" (click)="generatePDF()">Generate Report (PDF)</button>
+            </div>
         </div>
     </div>
 </div>

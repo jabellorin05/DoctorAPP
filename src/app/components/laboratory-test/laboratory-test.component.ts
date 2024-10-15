@@ -23,7 +23,7 @@ export class LaboratoryTestComponent implements OnInit {
 
   ngOnChanges(changes: any) { 
     if (changes['patientId']){
-      this.loadPrescriptions(); // Vuelve a cargar las prescripciones si patientId cambia
+      this.loadLaboratoryTest(); // Vuelve a cargar las prescripciones si patientId cambia
     }
   }
 
@@ -34,7 +34,7 @@ export class LaboratoryTestComponent implements OnInit {
     this.newLaboratoryTest = { id: 0, patientId: 0, testName: '', results: '', date: new Date() }; // Resetea el formulario
   }
 
-  loadPrescriptions() { 
+  loadLaboratoryTest() { 
     const patient = this.patientService.findPatientById(this.patientId);
 
     if (patient) {
