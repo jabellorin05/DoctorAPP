@@ -14,7 +14,7 @@ export class PatientService {
 
         this.patients.push(
             {
-                id: 1,
+                id: 123456,
                 name: 'Peter',
                 lastName: 'Parker',
                 dateOfBirth: '1990-01-01',
@@ -24,13 +24,13 @@ export class PatientService {
                 gender: 'male',
                 medicalHistory: [],
                 prescriptions: [
-                    { id: 1, patientId: 1, medication: 'Aspirin', dosage: '500 mg', date: new Date('2023-01-01') }
+                    { PrescriptionId: 1, PatientId: 123456, medication: 'Aspirin', dosage: '500 mg', date: new Date('2023-01-01') }
                 ],
                 observations: [
-                    { id: 1, patientId: 1, notes: 'Routine check-up, no issues.', date: new Date('2023-02-15') }
+                    { id: 1, patientId: 123456, notes: 'Routine check-up, no issues.', date: new Date('2023-02-15') }
                 ],
                 laboratoryTests: [
-                    { id: 1, patientId: 1, testName: 'Blood Test', results: 'Normal', date: new Date('2023-03-20') }
+                    { id: 1, patientId: 123456, testName: 'Blood Test', results: 'Normal', date: new Date('2023-03-20') }
                 ]
             },
             {
@@ -44,7 +44,7 @@ export class PatientService {
                 gender: 'female',
                 medicalHistory: [],
                 prescriptions: [
-                    { id: 2, patientId: 2, medication: 'Ibuprofen', dosage: '200 mg', date: new Date('2023-01-05') }
+                    { PrescriptionId: 2, PatientId: 2, medication: 'Ibuprofen', dosage: '200 mg', date: new Date('2023-01-05') }
                 ],
                 observations: [
                     { id: 2, patientId: 2, notes: 'Patient has allergies to penicillin.', date: new Date('2023-02-20') }
@@ -64,7 +64,7 @@ export class PatientService {
                 gender: 'male',
                 medicalHistory: [],
                 prescriptions: [
-                    { id: 3, patientId: 3, medication: 'Lisinopril', dosage: '10 mg', date: new Date('2023-01-10') }
+                    { PrescriptionId: 3, PatientId: 3, medication: 'Lisinopril', dosage: '10 mg', date: new Date('2023-01-10') }
                 ],
                 observations: [
                     { id: 3, patientId: 3, notes: 'Blood pressure slightly elevated.', date: new Date('2023-03-01') }
@@ -84,7 +84,7 @@ export class PatientService {
                 gender: 'male',
                 medicalHistory: [],
                 prescriptions: [
-                    { id: 4, patientId: 4, medication: 'Metformin', dosage: '500 mg', date: new Date('2023-01-15') }
+                    { PrescriptionId: 4, PatientId: 4, medication: 'Metformin', dosage: '500 mg', date: new Date('2023-01-15') }
                 ],
                 observations: [
                     { id: 4, patientId: 4, notes: 'Diabetes management ongoing.', date: new Date('2023-02-10') }
@@ -104,7 +104,7 @@ export class PatientService {
                 gender: 'female',
                 medicalHistory: [],
                 prescriptions: [
-                    { id: 5, patientId: 5, medication: 'Antihistamine', dosage: '10 mg', date: new Date('2023-01-20') }
+                    { PrescriptionId: 5, PatientId: 5, medication: 'Antihistamine', dosage: '10 mg', date: new Date('2023-01-20') }
                 ],
                 observations: [
                     { id: 5, patientId: 5, notes: 'Allergy symptoms observed.', date: new Date('2023-02-25') }
@@ -124,7 +124,7 @@ export class PatientService {
                 gender: 'male',
                 medicalHistory: [],
                 prescriptions: [
-                    { id: 6, patientId: 6, medication: 'Pain Reliever', dosage: '500 mg', date: new Date('2023-01-25') }
+                    { PrescriptionId: 6, PatientId: 6, medication: 'Pain Reliever', dosage: '500 mg', date: new Date('2023-01-25') }
                 ],
                 observations: [
                     { id: 6, patientId: 6, notes: 'Post-surgery recovery monitored.', date: new Date('2023-03-10') }
@@ -144,7 +144,7 @@ export class PatientService {
                 gender: 'female',
                 medicalHistory: [],
                 prescriptions: [
-                    { id: 7, patientId: 7, medication: 'Vitamin D', dosage: '1000 IU', date: new Date('2023-01-30') }
+                    { PrescriptionId: 7, PatientId: 7, medication: 'Vitamin D', dosage: '1000 IU', date: new Date('2023-01-30') }
                 ],
                 observations: [
                     { id: 7, patientId: 7, notes: 'Healthy, regular exercise.', date: new Date('2023-02-05') }
@@ -164,7 +164,7 @@ export class PatientService {
                 gender: 'male',
                 medicalHistory: [],
                 prescriptions: [
-                    { id: 8, patientId: 8, medication: 'Multivitamin', dosage: '1 tablet', date: new Date('2023-01-01') }
+                    { PrescriptionId: 8, PatientId: 8, medication: 'Multivitamin', dosage: '1 tablet', date: new Date('2023-01-01') }
                 ],
                 observations: [
                     { id: 8, patientId: 8, notes: 'Regular check-up, no major concerns.', date: new Date('2023-02-01') }
@@ -184,7 +184,7 @@ export class PatientService {
                 gender: 'female',
                 medicalHistory: [],
                 prescriptions: [
-                    { id: 9, patientId: 9, medication: 'Mood Stabilizer', dosage: '50 mg', date: new Date('2023-01-15') }
+                    { PrescriptionId: 9, PatientId: 9, medication: 'Mood Stabilizer', dosage: '50 mg', date: new Date('2023-01-15') }
                 ],
                 observations: [
                     { id: 9, patientId: 9, notes: 'Counseling sessions ongoing.', date: new Date('2023-02-20') }
@@ -204,7 +204,7 @@ export class PatientService {
                 gender: 'male',
                 medicalHistory: [],
                 prescriptions: [
-                    { id: 10, patientId: 10, medication: 'Anti-inflammatory', dosage: '250 mg', date: new Date('2023-01-20') }
+                    { PrescriptionId: 10, PatientId: 10, medication: 'Anti-inflammatory', dosage: '250 mg', date: new Date('2023-01-20') }
                 ],
                 observations: [
                     { id: 10, patientId: 10, notes: 'Injury recovery monitored.', date: new Date('2023-02-25') }
@@ -212,7 +212,148 @@ export class PatientService {
                 laboratoryTests: [
                     { id: 10, patientId: 10, testName: 'CT Scan', results: 'Normal', date: new Date('2023-03-05') }
                 ]
+            },
+            {
+                id: 11,
+                name: 'Wanda',
+                lastName: 'Vision',
+                dateOfBirth: '1992-09-10',
+                age: 32,
+                email: 'wandavision@gmail.com',
+                address: '501 Evergreen St',
+                gender: 'female',
+                medicalHistory: [ 'Knee injury from high-speed running in 2019', 'Metabolic changes due to speed force exposure', 'Slight radiation exposure in 2021'],
+                prescriptions: [
+                    { PrescriptionId: 11, PatientId: 11, medication: 'Anti-inflammatory', dosage: '250 mg', date: new Date('2023-01-20') }
+                ],
+                observations: [
+                    { id: 11, patientId: 11, notes: 'Injury recovery monitored.', date: new Date('2023-02-25') }
+                ],
+                laboratoryTests: [
+                    { id: 11, patientId: 11, testName: 'CT Scan', results: 'Normal', date: new Date('2023-03-05') }
+                ]
+            },
+            {
+                id: 12,
+                name: 'Peter',
+                lastName: 'Pan',
+                dateOfBirth: '1987-06-15',
+                age: 37,
+                email: 'peterpan@gmail.com',
+                address: '100 Neverland Blvd',
+                gender: 'male',
+                medicalHistory: ['Chronic insomnia', 'Fractured wrist in 2017'],
+                prescriptions: [
+                    { PrescriptionId: 12, PatientId: 12, medication: 'Melatonin', dosage: '10 mg', date: new Date('2023-04-01') }
+                ],
+                observations: [
+                    { id: 12, patientId: 12, notes: 'Experiencing vivid dreams due to insomnia.', date: new Date('2023-05-10') }
+                ],
+                laboratoryTests: [
+                    { id: 12, patientId: 12, testName: 'Sleep Study', results: 'Mild apnea', date: new Date('2023-06-01') }
+                ]
+            },
+            {
+                id: 13,
+                name: 'Mary',
+                lastName: 'Poppins',
+                dateOfBirth: '1980-11-05',
+                age: 44,
+                email: 'marypoppins@gmail.com',
+                address: '2 Cherry Tree Lane',
+                gender: 'female',
+                medicalHistory: ['Asthma diagnosed in 2010', 'Seasonal allergies'],
+                prescriptions: [
+                    { PrescriptionId: 13, PatientId: 13, medication: 'Inhaler', dosage: 'As needed', date: new Date('2023-07-20') }
+                ],
+                observations: [
+                    { id: 13, patientId: 13, notes: 'Asthma well controlled, but allergies worsening.', date: new Date('2023-08-10') }
+                ],
+                laboratoryTests: [
+                    { id: 13, patientId: 13, testName: 'Allergy Test', results: 'Positive for pollen', date: new Date('2023-08-15') }
+                ]
+            },
+            {
+                id: 14,
+                name: 'Clark',
+                lastName: 'Gable',
+                dateOfBirth: '1978-03-18',
+                age: 46,
+                email: 'clarkgable@gmail.com',
+                address: '45 Sunset Blvd',
+                gender: 'male',
+                medicalHistory: ['Fractured collarbone in 2015', 'Mild hypertension'],
+                prescriptions: [
+                    { PrescriptionId: 14, PatientId: 14, medication: 'Lisinopril', dosage: '5 mg', date: new Date('2023-09-10') }
+                ],
+                observations: [
+                    { id: 14, patientId: 14, notes: 'Blood pressure stabilized.', date: new Date('2023-09-25') }
+                ],
+                laboratoryTests: [
+                    { id: 14, patientId: 14, testName: 'EKG', results: 'Normal', date: new Date('2023-10-01') }
+                ]
+            },
+            {
+                id: 15,
+                name: 'Bruce',
+                lastName: 'Banner',
+                dateOfBirth: '1975-08-22',
+                age: 49,
+                email: 'brucebanner@gmail.com',
+                address: '30 Gamma Labs Blvd',
+                gender: 'male',
+                medicalHistory: ['Frequent stress-induced episodes', 'Muscle pain'],
+                prescriptions: [
+                    { PrescriptionId: 15, PatientId: 15, medication: 'Muscle Relaxant', dosage: '20 mg', date: new Date('2023-02-14') }
+                ],
+                observations: [
+                    { id: 15, patientId: 15, notes: 'Muscle tension reduced, but high stress levels remain.', date: new Date('2023-02-28') }
+                ],
+                laboratoryTests: [
+                    { id: 15, patientId: 15, testName: 'Cortisol Test', results: 'Elevated', date: new Date('2023-03-10') }
+                ]
+            },
+            {
+                id: 16,
+                name: 'Diana',
+                lastName: 'Troy',
+                dateOfBirth: '1983-07-12',
+                age: 41,
+                email: 'dianatroy@gmail.com',
+                address: '50 Starfleet Way',
+                gender: 'female',
+                medicalHistory: ['Tension headaches', 'Minor back pain'],
+                prescriptions: [
+                    { PrescriptionId: 16, PatientId: 16, medication: 'Ibuprofen', dosage: '400 mg', date: new Date('2023-05-12') }
+                ],
+                observations: [
+                    { id: 16, patientId: 16, notes: 'Symptoms improving with physical therapy.', date: new Date('2023-06-01') }
+                ],
+                laboratoryTests: [
+                    { id: 16, patientId: 16, testName: 'MRI Scan', results: 'No abnormalities', date: new Date('2023-06-15') }
+                ]
+            },
+            {
+                id: 17,
+                name: 'Tony',
+                lastName: 'Hawk',
+                dateOfBirth: '1968-05-12',
+                age: 56,
+                email: 'tonyhawk@gmail.com',
+                address: '45 Skater Blvd',
+                gender: 'male',
+                medicalHistory: ['Broken arm in 2002', 'Knee surgery in 2020'],
+                prescriptions: [
+                    { PrescriptionId: 17, PatientId: 17, medication: 'Pain Reliever', dosage: '500 mg', date: new Date('2023-09-01') }
+                ],
+                observations: [
+                    { id: 17, patientId: 17, notes: 'Recovered well from knee surgery.', date: new Date('2023-09-15') }
+                ],
+                laboratoryTests: [
+                    { id: 17, patientId: 17, testName: 'X-ray', results: 'Knee healing properly', date: new Date('2023-09-20') }
+                ]
             }
+        
         );
     }
 

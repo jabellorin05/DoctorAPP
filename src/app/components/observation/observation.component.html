@@ -1,5 +1,11 @@
 <div>
     <h4>Add Observation</h4>
+
+    <!-- Mostrar el nombre del paciente seleccionado -->
+    <div *ngIf="selectedPatient">
+        <h5>Patient: {{ selectedPatient.name }} {{ selectedPatient.lastName }}</h5>
+    </div>
+
     <textarea [(ngModel)]="newObservation.notes" placeholder="Enter notes" class="form-control"></textarea>
     <button class="btn btn-primary mt-2" (click)="addObservation()">Add Observation</button>
 
@@ -11,5 +17,4 @@
             </li>
         </ul>
     </div>
-    <button class="btn btn-success" (click)="saveAll()">Save All and Close</button>
 </div>
