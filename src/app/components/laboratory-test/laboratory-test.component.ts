@@ -29,7 +29,7 @@ export class LaboratoryTestComponent implements OnInit {
 
   addLaboratoryTest() {
     this.newLaboratoryTest.patientId = this.patientId;
-    this.patientService.addLaboratoryTest(this.patientId, this.newLaboratoryTest);
+    //this.patientService.addLaboratoryTest(this.patientId, this.newLaboratoryTest);
     this.laboratoryTests.push(this.newLaboratoryTest); // Agrega la nueva prueba
     this.newLaboratoryTest = { id: 0, patientId: 0, testName: '', results: '', date: new Date() }; // Resetea el formulario
   }
